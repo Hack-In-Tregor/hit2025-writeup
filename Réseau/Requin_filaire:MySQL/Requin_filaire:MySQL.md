@@ -1,6 +1,6 @@
 # Requin_filaire : MySQL
 **Date:** April 2025
-**Challenge Author(s):**  
+**Challenge Author(s):**  SevenInside
 **Difficulty:** Très difficile  
 
 ## Synopsis
@@ -144,4 +144,4 @@ probablement d'autres informations sensibles.
 3. Le client envoie cette réponse au serveur
 4. Le serveur peut vérifier l'authenticité sans connaître le mot de passe en clair
 
-hit{!!!secret!!!}
+Flag final : `hit{!!!secret!!!}`

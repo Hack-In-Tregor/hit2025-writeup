@@ -1,6 +1,6 @@
 # Cloud : Alpha_Beta_Gamma... 1/2
 **Challenge Author(s)**: SevenInside
-**Difficulty**: Moyen
+**Difficulty**: Facile
 
 ## Configuration AWS 
 

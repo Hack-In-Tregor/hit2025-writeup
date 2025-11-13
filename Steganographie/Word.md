@@ -4,7 +4,7 @@
 
 ## Synopsis
 
-Ce document Word semble cacher quelque chose
+Ce document Word semble cacher quelque chose...
 
 ## Steps to solve 
 

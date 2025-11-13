@@ -1,7 +1,7 @@
 
 # Cloud : Alpha_Beta_Gamma...S3 2/2
 **Challenge Author(s)**: SevenInside
-**Difficulty**: Moyen
+**Difficulty**: Facile
 
 ## 🎯  FLAG2
 

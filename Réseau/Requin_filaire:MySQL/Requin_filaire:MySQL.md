@@ -1,7 +1,7 @@
 # Requin_filaire : MySQL
-**Date:** April 2025
+**Date:** Septembre 2025
 **Challenge Author(s):**  SevenInside
-**Difficulty:** Très difficile  
+**Difficulty:** Difficile  
 
 ## Synopsis
 Un malware a enregistré une communication sur la loopback d'un serveur MySQL. Il semblerait que la base de données soit en cours d'initialisation. Trouvez le mot de passe root de la base !

@@ -1,6 +1,6 @@
 # Web : Bienvenue sur mon premier site 1/4
 **Challenge Author(s)**: SevenInside
-**Difficulty**: Facile
+**Difficulty**: Très facile
 
 ## Synopsis
 

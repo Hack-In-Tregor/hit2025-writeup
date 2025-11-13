@@ -1,6 +1,6 @@
 # Web : Concours photos 1/4 et Concours photos 2/4
 **Challenge Author(s)**: SevenInside
-**Difficulty**: Moyen
+**Difficulty**: Moyen puis Difficile
 
 ## Synopsis
 
@@ -196,4 +196,4 @@ En parcourant le repertoire, on arrive à trouver le flag qui se trouvait dans u
 
 Flag n°2 : `hit{MYReverseISWOrking!}`
 
-Les deux derniers flags consistent à passer root sur le conteneur puis de s'extraire du conteneur. Les solutions ne seront pas partagées car les dernières étapes du challenge seront très probablement rejouées.
+Les deux derniers flags consistent à passer root sur le conteneur puis de s'extraire du conteneur. Les solutions ne seront pas partagées car les dernières étapes du challenge n'ont pas été tentées durant HIT 2025 et seront très probablement rejouées.

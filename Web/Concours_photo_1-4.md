@@ -4,7 +4,7 @@
 
 ## Synopsis
 
-Ce site de concours photo du radôme semble exposer des vulnérabilités. L'objectif final est de prendre complètement le contrôle de la machine hôte.
+Ce site de concours de photos du radôme semble exposer des vulnérabilités. L'objectif final est de prendre complètement le contrôle de la machine hôte.
 
 ## Steps to solve
 
@@ -14,16 +14,16 @@ L'exploration du site nous permet de voir plusieurs fonctionnalités :
 - Connexion
 - Upload d'une image
 
-En continuant l'exploration, on peut remarquer que la phase de connexion présente une erreur lors de l'envoi de caractères spéciaux tel que `'`. En effet, furtivement, et de manière plus flagrante lorsque l'on désactive Javascript, un message de Debug apparait et affiche une partie de la base de données.
+En continuant l'exploration, on peut remarquer que la phase de connexion présente une page de log lors de l'envoi du formulaire. En effet, furtivement, et de manière plus flagrante lorsque l'on désactive Javascript, un message de Debug apparait et affiche une partie de la base de données.
 
 ```text
 Debug:array(8) { [0]=> int(3) ["id"]=> int(3) [1]=> string(4) "test" ["username"]=> string(4) "test" [2]=> string(12) "test@test.fr" ["email"]=> string(12) "test@test.fr" [3]=> string(60) "$2y$10$o.TbcBTnbE6fMPVRcQ5VSe3KxjvbGlwu2ek/9piIDheNJ/OKuFdum" ["password"]=> string(60) "$2y$10$o.TbcBTnbE6fMPVRcQ5VSe3KxjvbGlwu2ek/9piIDheNJ/OKuFdum" }
 ```
 
- Il semblerait que l'on soit face à une injection SQL. Pour confirmer cette observation, on sort directement SQLMap.
+Il semblerait que l'on soit en face d'une injection SQL. Pour confirmer cette observation, on sort directement SQLMap.
 
  ```bash
- hit2025@yd-cxvyt93:~$ sqlmap -u http://10.11.20.6/connexion.php --data="email=test@test.fr&password=test" --dump-all
+ hit2025@pentest:~$ sqlmap -u http://10.11.20.6/connexion.php --data="email=test@test.fr&password=test" --dump-all
         ___
        __H__
 ___ ___[.]_____ ___ ___  {1.8.4#stable}
@@ -134,7 +134,7 @@ Table: users
 
 On récupère le premier flag : `hit{SQLiteEnPLS:/}`
 
-On remarque aussi la possibilité une référence vers les fichiers uploadés, en mettant ce lien dans l'URL (<http://concours-photo-team-X.hit.local/uploads/691597d208226.jpg>) on accède au fichier uploadé. Reste maintenant à trouver un moyen pour uploader un fichier PHP afin de réaliser une RCE (Remote Code Execution).
+On remarque aussi la présence d'une référence vers les fichiers uploadés : en mettant ce lien dans l'URL (<http://concours-photo-team-X.hit.local/uploads/691597d208226.jpg>) on accède au fichier uploadé. Reste maintenant à trouver un moyen pour uploader un fichier PHP afin de réaliser une RCE (Remote Code Execution).
 
 Pour un premier test, faisons un fichier PHP tout simple (`hit.php`) :
 
@@ -182,7 +182,7 @@ Table: photos
 +----+------+---------------------------+
 ```
 
-Re-bingo ! On vient qu'un fichier PHP a bien été uploadé. En l'executant, on retrouve notre `phpinfo()`. Il ne reste plus qu'à faire la même chose mais avec une RCE cette fois-ci. Pour ce faire, on peut reposer sur plusieurs solutions :
+Re-bingo ! On voit qu'un fichier PHP a bien été uploadé. En l'executant, on retrouve notre `phpinfo()`. Il ne reste plus qu'à faire la même chose mais avec une RCE cette fois-ci. Pour ce faire, on peut reposer sur plusieurs solutions :
 
 - une session Meterpreter portée par l'outil Metasploit
 - Netcat
@@ -196,4 +196,4 @@ En parcourant le repertoire, on arrive à trouver le flag qui se trouvait dans u
 
 Flag n°2 : `hit{MYReverseISWOrking!}`
 
-Les deux derniers flags consistent à passer root sur le conteneur puis de s'extraire du conteneur. Les solutions ne seront pas partagées car les dernières étapes du challenge n'ont pas été tentées durant HIT 2025 et seront très probablement rejouées.
+Les deux derniers flags consistent à passer root sur le conteneur puis de s'extraire de ce dernier. Les solutions ne seront pas partagées car les dernières étapes du challenge n'ont pas été tentées durant HIT 2025 et seront très probablement rejouées.

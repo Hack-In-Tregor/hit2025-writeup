@@ -4,13 +4,13 @@
 
 ## Synopsis
 
-Le site semble être en travaux, comment faire pour en prendre le contrôle.
+Le site semble être en travaux, comment faire pour en prendre le contrôle ?
 
 ## Steps to solve
 
-Les premières recherches ne donnent pas grand chose. La seule information qui nous être transmis dans les headers HTTP est la version d'apache utilisée : `Apache/2.4.49`.
+Les premières recherches ne donnent pas grand chose. La seule information qui nous est transmise dans les headers HTTP est la version d'apache utilisée : `Apache/2.4.49`.
 
-Assez rapidement, après quelques recherches sur Internet, il semblerait que cette version d'Apache est vulnérable à une RCE (Remote-Code Execution), permettant ainsi de prendre directement le contrôle du conteneur (Lien utile : <https://blog.qualys.com/vulnerabilities-threat-research/2021/10/27/apache-http-server-path-traversal-remote-code-execution-cve-2021-41773-cve-2021-42013>).
+Assez rapidement, après quelques recherches sur Internet, il semblerait que cette version d'Apache soit vulnérable à une RCE (Remote-Code Execution), permettant ainsi de prendre directement le contrôle du conteneur (Lien utile : <https://blog.qualys.com/vulnerabilities-threat-research/2021/10/27/apache-http-server-path-traversal-remote-code-execution-cve-2021-41773-cve-2021-42013>).
 
 En envoyant directement des requêtes HTTP craftées pour le site, on arrive à effectivement faire fonctionner la vulnérabilité et à récupérer le flag qui se trouve à la racine du conteneur.
 
@@ -35,7 +35,6 @@ echo
 # Send the payload
 curl -s --path-as-is -X POST "$TARGET$TRAVERSAL_PATH" \
 -d "echo Content-Type: text/plain; echo; $CMD"
-admin@HIT2025 hackintregor %
 ```
 
 En exploitant le script, on liste les fichiers présent à la racine du conteneur

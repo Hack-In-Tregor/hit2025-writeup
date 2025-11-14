@@ -8,9 +8,9 @@ Une page d'administration semble cacher un secret !
 
 ## Steps to solve
 
-Le cookie de session `halloween-usertype` semble stocker un jeton JWT : `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiZ3Vlc3QifQ.KoIsL-7JOMQNlJNlCIFw7-FL0iWsFKw_3tN9lX-54rk`. A travers du site <jwt.io>, on remarque que le jeton stocke le rôle de l'utilisateur à savoir `guest`. Il est donc nécessaire de voir comment casser ce token JWT. Il repose sur un mot de passe (l'algorithme utilisé est `HS256` aka HMAC with SHA-256)
+Le cookie de session `halloween-usertype` stocke un jeton JWT : `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiZ3Vlc3QifQ.KoIsL-7JOMQNlJNlCIFw7-FL0iWsFKw_3tN9lX-54rk`. A travers du site <jwt.io>, on remarque que le jeton stocke le rôle de l'utilisateur à savoir `guest`. Il est donc nécessaire de voir comment casser ce token JWT. Il repose sur un mot de passe (l'algorithme utilisé est `HS256` aka HMAC with SHA-256)
 
-Pour ce faire JWT_Tool permet de brute-forcer le mot de passe signant le jeton.
+Pour ce faire `JWT_Tool` permet de brute-forcer le mot de passe signant le jeton.
 
 ```bash
 admin@HIT2025 jwt_tool % python3 jwt_tool.py eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiZ3Vlc3QifQ.KoIsL-7JOMQNlJNlCIFw7-FL0iWsFKw_3tN9lX-54rk -C -d rockyou2.txt

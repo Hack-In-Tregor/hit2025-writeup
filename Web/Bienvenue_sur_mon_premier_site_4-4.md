@@ -33,7 +33,7 @@ lib64
 ...
 ```
 
-On peut donc ouvrir de la même manière le fichier flag.txt (`127.0.0.1 && cat /flag.txt`), on obtient le résutalt suivant : `hit{bien-joue-le-site-est-dans-vos-mains}`
+On peut donc ouvrir de la même manière le fichier `flag.txt` (`127.0.0.1 && cat /flag.txt`), on obtient le résutalt suivant : `hit{bien-joue-le-site-est-dans-vos-mains}`
 
 
 

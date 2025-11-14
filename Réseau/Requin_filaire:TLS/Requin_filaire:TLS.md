@@ -9,9 +9,7 @@ Un message caché se trouve dans ces trames réseaux
 ## Secrets TLS via FTP
 
 Un 1er filtre sur FTP montre une connexion anonyme à un serveur FTP et le download de secrets TLS.
-Ces chaînes sont des "secrets TLS" utilisés dans TLS 1.3 pour dériver les clés de chiffrement. Ils contiennent:
-Les secrets de trafic client et serveur
-Les secrets de handshake
+Ces chaînes sont des "secrets TLS" utilisés dans TLS 1.3 pour dériver les clés de chiffrement.
 L'exporteur de secret
 On sauve l'ensemble dans un fichier tls-keys.txt:
 ```bash
@@ -40,4 +38,4 @@ Les sessions TLS correspondant à ces secrets sont alors automatiquement déchif
 On trouve le flag dans une réponse HTTP 200 OK:
 ![alt text](image-1.png)
 
-hit{WithKeysDoorsCanBeOpened}
+Flag final : `hit{WithKeysDoorsCanBeOpened}`

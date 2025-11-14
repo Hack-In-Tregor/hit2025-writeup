@@ -8,7 +8,7 @@ Le créateur du site nous indique que de nombreux flags sont à trouver !
 
 ## Steps to solve
 
-On remarque sur la page d'accueil un lien vers l'administration du site. Cependant, la page nous indique que le cookie de session n'est pas le bon. Dans la configuration du navigateur, on remarque que le site nous à renseigner le cookie suivant :
+On remarque sur la page d'accueil un lien vers l'administration du site. Cependant, la page nous indique que le cookie de session n'est pas le bon. Dans la configuration du navigateur, on remarque que le site nous a renseigné le cookie suivant :
 
 - nom : ``premier-site-user-type``
 - valeur : `user`

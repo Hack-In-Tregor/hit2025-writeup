@@ -137,7 +137,7 @@ Le mot de passe root trouvé peut être utilisé pour accéder à la base de don
 probablement d'autres informations sensibles.
 1. Le serveur envoie un challenge (scramble) de 20 octets au client
 2. Le client calcule:
-    *  SHA1(password)
+    * SHA1(password)
     * SHA1(SHA1(password))
     * SHA1(scramble + SHA1(SHA1(password)))
     * XOR entre le résultat précédent et SHA1(password)

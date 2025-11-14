@@ -28,7 +28,7 @@ aws_secret_access_key=hNylk2SGuLj9ayXFIauwFGA3zlEW5BF/m8Xo8t6h
 
 ***************
 
-On assume le rôle:
+On récupère des informations sur ce nouveau compte :
 
 ```bash
 root@HIT2025 ~ # aws sts get-caller-identity --profile hit_priv
@@ -40,7 +40,8 @@ root@HIT2025 ~ # aws sts get-caller-identity --profile hit_priv
 ```
 
 *****************
-On voit ce qu'on peut faire avec ce nouveau user/profile:
+
+On voit ce qu'on peut faire avec ce nouveau profile:
 
 ```bash
 root@HIT2025 ~ # aws iam get-user --profile hit_priv

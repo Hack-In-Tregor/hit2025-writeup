@@ -50,7 +50,7 @@ Mais ce qui est encore plus intéressant c'est la présence du module `dis`, ce 
              ...
 ```
 
-Le mot de passe semble du shell est `abc123`. Ainsi on peut récupérer le flag final se trouvant dans le même répertoire.
+Le mot de passe du shell est `abc123`. Ainsi on peut récupérer le flag final se trouvant dans le même répertoire.
 
 ```python
 >>> shell()

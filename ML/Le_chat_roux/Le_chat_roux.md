@@ -1,6 +1,5 @@
 # ML_2 : Le chat roux
-**Date:** April 2025
-**Challenge Author(s):**  Julie Rabette 
+**Challenge Author(s):**  jra05183 
 **Difficulty:** Moyen  
  
 
@@ -14,26 +13,20 @@ Images de test : marmotte, chat roux (votre maitre), renard roux
 
 ## Steps to Solve:
 
-1. Use the provided python code, see that the code save a checkpoint and  weights.meta is required
-2. search how the wrapp label of the class and class_id
-3. Use code to print the categories of the init_model.pth : categories = weights.meta.get
-   ("categories", None)
-4. Find the class_id for class_name = "tiger cat" : 282
-5. Change weights.meta["categories"] only for class_id = 282 and set "maitre du monde" (using 
-   the provided code)
-6. Save the new model and send it to the challenge
+Utiliser le code fourni et voir que cela permet de sauvegarder un checkpoint du model avec la 
+   partie weights.meta obigatoire
+Chercher comment est fait le lien entre label et class_id
+```bash
+categories = weights.meta.get("categories", None)
+```
+trouver le class_id pour la classe "tiger cat" = 282
+changer pour la class_id = 282 le label et remplacer par "maitre du monde"
 
+```bash
+categories[282] = "maitre du monde"
+```
+Sauvegarder le model avec le code fourni, cela doit etre un .pth
 
-## Construct the Flag:
-The flag is delivered by code if the challenge is passed.
-
-## Skills Required:
-1. Open pytorch model and read the weights.meta
-2. Find in model the wrapper between the class_id and the text : class_id = 100 correspond to 'black swan'
-3. Reuse the provided code to change the wrapper and save the new model
-
-## Flag Format:
-hit{<string>}
 
 ## Response:
 hit{MqVVP4lZPaRZLopALn7TQaJnPqlp}

@@ -1,6 +1,5 @@
 # osint_1 : radio : coordonnées d'une antenne 4G
-**Date:** April 2025
-**Challenge Author(s):**  Julie Rabette 
+**Challenge Author(s):**  jra05183 
 **Difficulty:** Très facile  
  
 
@@ -8,36 +7,31 @@
 Quelles sont les coordoonées GPS de l'antenne 4G d'Orange située sur la commune ou a été prise 
 la photo ?
 
-## Description
-1. **what is given to the player:** one photo.
-2. **what is the goal:** Find and use monreseaumobile.arcep.fr to find the coordinates of the 4G antenna.
-
 ## Steps to Solve:
 
-1. Use image search to find the location of the photo = Treglamus ('voilier de pierre' from Eugene Bornet)
-2. Search the arcep site about mobile network.
-3. Use arcep site ([monreseaumobile.arcep.fr](https://monreseaumobile.arcep.fr)) and filter the map with  'Antennes et Déploiement'.
-4. On the map go to the municipality of Treglamus.
-5. In the left menu, select the operator Orange + in service
-6. On the map, click on the only Orange site displayed in Treglamus.
-7. The details of the support are shown on the left. In the 'location' section, the GPS coordinates are provided. (48.5689, -3.2742)
+Faire une recherche avec google lens pour trouver la commune de la photo : Treglamus ('voilier de pierre' from Eugene Bornet)
 
+Aller sur le site de l'arcep.
+```bash
+https://monreseaumobile.arcep.fr
+```
 
-## Construct the Flag:
-Once confirmed, translate coordinates into the required format: hit{latitude,longitude}.
+Filtrer sur la map avec  'Antennes et Déploiement'.
 
-## Skills Required:
-1. Image search to find the town.
-2. Use of monreseaumobile.arcep.fr.
-3. translation of coordinates into the required format.
+Aller sur la commune de Treglamus.
 
-## Flag Format:
-hit{latitude,logitude}
-(Detail: hit{aa.aaa,-b.bbb} )
-(Example: hit{48.603,-3.435})
+Dans le menu de gauche selection l'operateur 'Orange' + 'in service'
+
+Sur la carte cliquer sur le seul site Orange qu'on voit sur Treglamus au nord.
+
+Dans le detail du support il y a le param 'location'. les coordonnées GPS sont la (48.5689, -3.
+2742).
+
+Attention au format il faut garder que les 3 premières décimales. Pas d'arrondi
 
 ## Response:
 hit{48.568,-3.274}
-town = Treglamus
-complete coordinate => (48.5689, -3.2742)
+
+ville = Treglamus /
+coordonnées complètes => (48.5689, -3.2742)
 

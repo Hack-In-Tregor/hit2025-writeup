@@ -1,6 +1,5 @@
 # osint_5 : fixe ADSL : code_nra non degroupé fournissant du VDSL2
-**Date:** April 2025
-**Challenge Author(s):**  Julie Rabette 
+**Challenge Author(s):**  jra05183
 **Difficulty:** Très facile  
  
 
@@ -10,29 +9,23 @@ autour de Plouec-du-trieux ? quel est le nombre de lignes sur ce NRA ?
 
 ## Steps to Solve:
 
-1. Use google lens (or any other tool) to find the location of the photo.
-2. Find the corresponding town name.
-3. Find the webite ariase.com (to see the maps of NRA in france (ADSL)).
-4. Find Plouec-du-trieux on ariase.com map.
-5. Two unbundled central offices (NRAs) are located near the town of Plouec-du-trieux (runan et 
-   coatascorn). 
-6. Check details of each NRA. only one propose VDSL2 = RUNAN.
-7. In detail find "code long" and the number of lines of the NRA RUNAN. it's the response.
+Aller sur le site de ariase.com (chercher la map pour les NRA et l'ADSL).
+```bash
+https://www.ariase.com/box/carte-nra
+```
+Trouver sur la carte Plouec-du-trieux.
+Il y a deux centaux non degroupés autour de Plouec du trieux, il sont en rouge (runan et 
+coatascorn.
 
-## Construct the Flag:
-Once confirmed, combine "code_long"  of NRA and the number of line into 
-the required format: hit{codeLong_numberOfLines}.
+Cliquer sur chacun de ses points et regarder si l'un des opérateur a VLDS2 d'ecrit.
+Il n'y a qu'a Runan que Orange propose du VDSL2
 
-## Skills Required:
-1. Image search.
-2. Open NRA information seach.
-2. Usage of ariase.com website.
+Il faut prendre le param "code long" la seconde ligne du detail des NRA
+Le nombre de lignes est indiqué juste en dessous
 
 
-## Flag Format:
-hit{codeLong_numberOfLines}
-
-Example: hit{22222PHA_456}
+## Response:
+hit{22269RUN_350}
 
 
 
